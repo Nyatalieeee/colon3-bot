@@ -30,20 +30,20 @@ client.on('messageCreate', (msg) => {
     if (msg.content === '!ping') {
         msgOutput = 'pong!';
         msg.channel.send(msgOutput);
-        console.log(`Colon3 said: "${msgOutput}"`)
+        console.log(`${client.user.username} said: "${msgOutput}"`)
         return;
     }
     if (msg.content === '!foo') {
         msgOutput = 'bar';
         msg.channel.send(msgOutput);
-        console.log(`Colon3 said: "${msgOutput}"`);
+        console.log(`${client.user.username} said: "${msgOutput}"`);
         return;
     }
     if (msg.content === '!quote') {
         let quoteNum = Math.floor(Math.random() * 25);
         msgOutput = quotes[quoteNum];
         msg.channel.send(msgOutput);
-        console.log(`Colon3 said quote #${quoteNum++}`);
+        console.log(`${client.user.username} said quote #${quoteNum++}`);
         return;
     }
     if (msg.content === ':3') {
