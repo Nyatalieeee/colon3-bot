@@ -16,6 +16,7 @@ client.on("ready", () => {
 });
 
 client.on("messageCreate", (msg) => {
+    const rps = ["rock", "paper", "scissors"]; // TODO: rock paper scissors (jfc what do i even do with this)
     let msgOutput;
 
     if (msg.author.bot) {
