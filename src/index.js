@@ -21,6 +21,12 @@ client.on("messageCreate", (msg) => {
     if (msg.author.bot) {
         return;
     }
+    if (msg.content === "!help") {
+        msgOutput = "- \"**!help**\" -> shows the list of commands\n\n- \"**!ping**\" -> responds with \"pong!\"\n\n- \"**!foo**\" -> responds with \"bar\"\n\n- \"**!quote**\" -> sends a random OOCQC Plus DMs quote\n\n- \"**:3**\" -> :3\n\n";
+        msg.channel.send(msgOutput);
+        console.log(`\n${client.user.username} sent the help message`);
+        return;
+    }
     if (msg.content === "!ping") {
         msgOutput = "pong!";
         msg.channel.send(msgOutput);
