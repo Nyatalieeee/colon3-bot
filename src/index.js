@@ -1,5 +1,5 @@
 const { Client, GatewayIntentBits } = require("discord.js");
-const quotes = require("./quotes");
+const quotes = require("./modules/quotes");
 const config = require("../config.json");
 const client = new Client({
     intents: [
