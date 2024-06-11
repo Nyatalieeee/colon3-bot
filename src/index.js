@@ -1,6 +1,7 @@
 const { Client, GatewayIntentBits } = require("discord.js");
-const quotes = require("./modules/quotes");
 const config = require("../config.json");
+const letters = require("./modules/letters");
+const quotes = require("./modules/quotes");
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
@@ -17,8 +18,8 @@ client.on("ready", () => {
 
 client.on("messageCreate", (msg) => {
     let msgOutput;
-    let rpsInput = msg.content.split(' ');
-    const cmdInput = (rpsInput[1] ?? " ").toLowerCase();
+    let cmd = msg.content.split(' ');
+    const cmdInput = (cmd[1] ?? " ").toLowerCase();
     const rps = ["rock", "paper", "scissors"];
     const rock = rps[0];
     const paper = rps[1];
@@ -66,8 +67,18 @@ client.on("messageCreate", (msg) => {
         console.log(`\n:3`);
         return;
     }
+    if (msg.content.toLowerCase().includes("good bot")) {
+        msg.channel.send(letters.keysmash());
+        console.log(`${client.user.username} was called a good bot`);
+        return;
+    }
+    if (msg.content === "!keysmash") {
+        msg.channel.send(letters.keysmash());
+        console.log(`${client.user.username} keysmashed`);
+        return;
+    }
     // blame amelia for this mess /lh
-    if (rpsInput[0] === '!rps') {
+    if (cmd[0] === '!rps') {
         if (cmdInput === rock || cmdInput === paper || cmdInput === scissors) {
             let rpsNum = Math.floor(Math.random() * rps.length);
             msgOutput = rps[rpsNum];
