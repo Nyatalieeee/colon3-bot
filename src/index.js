@@ -18,7 +18,7 @@ client.on("ready", () => {
 client.on("messageCreate", (msg) => {
     let msgOutput;
     let rpsInput = msg.content.split(' ');
-    const cmdInput = rpsInput[1];
+    let cmdInput = rpsInput[1];
     const rps = ["rock", "paper", "scissors"];
     const rock = rps[0];
     const paper = rps[1];
@@ -68,6 +68,7 @@ client.on("messageCreate", (msg) => {
     }
     // blame amelia for this mess /lh
     if (rpsInput[0] === '!rps') {
+        cmdInput = cmdInput.toLowerCase();
         if (cmdInput === rock || cmdInput === paper || cmdInput === scissors) {
             let rpsNum = Math.floor(Math.random() * rps.length);
             msgOutput = rps[rpsNum];
@@ -110,7 +111,7 @@ client.on("messageCreate", (msg) => {
                     return;
                 }
             }
-        } else if (cmdInput === "cutie") {
+        } else if (cmdInput === "cutie") { // iykyk
             msgOutput = "gayass";
             msg.channel.send(msgOutput);
             return;
