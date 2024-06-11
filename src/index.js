@@ -30,7 +30,7 @@ client.on("messageCreate", (msg) => {
         return;
     }
     if (msg.content === "!help") {
-        msgOutput = "- \"**!help**\" -> shows the list of commands\n\n- \"**!ping**\" -> responds with \"pong!\"\n\n- \"**!foo**\" -> responds with \"bar\"\n\n- \"**!quote**\" -> sends a random OOCQC Plus DMs quote\n\n- \"**!allquotes**\" -> sends a list of every OOCQC Plus DMs quote (use sparingly)\n\n- \"**!rps <'rock', 'paper', 'scissors'>**\" -> play rock paper scissors (doesnt fully work yet)\n\n- \"**:3**\" -> :3\n\n";
+        msgOutput = "- \"**!help**\" -> shows the list of commands\n\n- \"**!ping**\" -> responds with \"pong!\"\n\n- \"**!foo**\" -> responds with \"bar\"\n\n- \"**!quote**\" -> sends a random OOCQC Plus DMs quote\n\n- \"**!allquotes**\" -> sends a list of every OOCQC Plus DMs quote (use sparingly)\n\n- \"**!keysmash**\" -> sends a keysmash\n\n- \"**!rps <'rock', 'paper', 'scissors'>**\" -> play rock paper scissors (doesnt fully work yet)\n\n- \"**:3**\" -> :3\n\n";
         msg.channel.send(msgOutput);
         console.log(`\n${client.user.username} sent the help message`);
         return;
@@ -67,18 +67,39 @@ client.on("messageCreate", (msg) => {
         console.log(`\n:3`);
         return;
     }
-    if (msg.content.toLowerCase().includes("good bot")) {
-        msg.channel.send(letters.keysmash());
-        console.log(`\n${client.user.username} was called a good bot`);
-        return;
-    }
     if (msg.content === "!keysmash") {
         msg.channel.send(letters.keysmash());
         console.log(`\n${client.user.username} keysmashed`);
         return;
     }
+    if (cmd[0] === "!c3") {
+        if (msg.content.toLowerCase().includes("good bot")) {
+            msg.channel.send(letters.keysmash());
+            console.log(`\n${client.user.username} was called a good bot`);
+            return;
+        } else {
+            msgOutput = "u have to tell me something smh";
+            msg.channel.send(msgOutput);
+            return;
+        }
+    }
+    if (cmd[0] === "!c") {
+        if (cmdInput !== " ") {
+            let cTemp = Math.floor(((cmdInput - 32) / 1.8) * 10) / 10;
+            msgOutput = `${cmdInput}f is ${cTemp}c`;
+            msg.channel.send(msgOutput);
+            console.log(`${client.user.username} converted ${cmdInput}f to ${cTemp}c`);
+            return;    
+        } else if (cmdInput === " ") {
+            msg.channel.send("converts fahrenheit to celcius\n\nsyntax: \`!c <temperature in f>\`");
+            return;
+        } else if (cmdInput == NaN) { // THIS SHIT DOESNT WORK
+            msg.channel.send("temperature must be a number");
+            return;
+        }
+    }
     // blame amelia for this mess /lh
-    if (cmd[0] === '!rps') {
+    if (cmd[0] === "!rps") {
         if (cmdInput === rock || cmdInput === paper || cmdInput === scissors) {
             let rpsNum = Math.floor(Math.random() * rps.length);
             msgOutput = rps[rpsNum];
