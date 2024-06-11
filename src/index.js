@@ -83,18 +83,27 @@ client.on("messageCreate", (msg) => {
             return;
         }
     }
-    if (cmd[0] === "!c") {
-        if (cmdInput !== " ") {
-            let cTemp = Math.floor(((cmdInput - 32) / 1.8) * 10) / 10;
-            msgOutput = `${cmdInput}f is ${cTemp}c`;
+    if (cmd[0] === "!temp") {
+        if (cmdInput.toLowerCase().includes("f")) {
+            let cTemp = Math.floor(((cmdInput.replace("f", "") - 32) / 1.8) * 10) / 10;
+            msgOutput = `${cmdInput.replace("f", "")}f is ${cTemp}c`;
             msg.channel.send(msgOutput);
-            console.log(`${client.user.username} converted ${cmdInput}f to ${cTemp}c`);
-            return;    
-        } else if (cmdInput === " ") {
-            msg.channel.send("converts fahrenheit to celcius\n\nsyntax: \`!c <temperature in f>\`");
+            console.log(`${client.user.username} converted ${cmdInput.replace("f", "")}f to ${cTemp}c`);
             return;
-        } else if (cmdInput == NaN) { // THIS SHIT DOESNT WORK
-            msg.channel.send("temperature must be a number");
+        } else if (cmdInput.toLowerCase().includes("c")) {
+            let fTemp = Math.floor((cmdInput.replace("c", "") * 1.8) + 32);
+            msgOutput = `${cmdInput.replace("c", "")}c is ${fTemp}f`;
+            msg.channel.send(msgOutput);
+            console.log(`${client.user.username} converted ${cmdInput.replace("c", "")}c to ${fTemp}f`);
+            return;
+        } else if (cmdInput >= 1000000000000000000000) {
+            msgOutput = "idk lol";
+            msg.channel.send(msgOutput);
+            console.log(`${client.user.username}'s brain broke`);
+            return;
+        } else {
+            msgOutput = `syntax: \`!temp <number><\"c\", \"f\">\`\n\nexamples: \`!temp 69f\`, \`!temp 21c\``;
+            msg.channel.send(msgOutput);
             return;
         }
     }
