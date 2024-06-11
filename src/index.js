@@ -69,12 +69,12 @@ client.on("messageCreate", (msg) => {
     }
     if (msg.content.toLowerCase().includes("good bot")) {
         msg.channel.send(letters.keysmash());
-        console.log(`${client.user.username} was called a good bot`);
+        console.log(`\n${client.user.username} was called a good bot`);
         return;
     }
     if (msg.content === "!keysmash") {
         msg.channel.send(letters.keysmash());
-        console.log(`${client.user.username} keysmashed`);
+        console.log(`\n${client.user.username} keysmashed`);
         return;
     }
     // blame amelia for this mess /lh
