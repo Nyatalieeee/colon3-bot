@@ -30,7 +30,7 @@ client.on("messageCreate", (msg) => {
         return;
     }
     if (msg.content === "!help") {
-        msgOutput = "- \"**!help**\" -> shows the list of commands\n\n- \"**!ping**\" -> responds with \"pong!\"\n\n- \"**!foo**\" -> responds with \"bar\"\n\n- \"**!quote**\" -> sends a random OOCQC Plus DMs quote\n\n- \"**!allquotes**\" -> sends a list of every OOCQC Plus DMs quote (use sparingly)\n\n- \"**!keysmash**\" -> sends a keysmash\n\n- \"**!rps <'rock', 'paper', 'scissors'>**\" -> play rock paper scissors (doesnt fully work yet)\n\n- \"**:3**\" -> :3\n\n";
+        msgOutput = "- \"**!help**\" -> shows the list of commands\n\n- \"**!ping**\" -> responds with \"pong!\"\n\n- \"**!foo**\" -> responds with \"bar\"\n\n- \"**!quote**\" -> sends a random OOCQC Plus DMs quote\n\n- \"**!allquotes**\" -> sends a list of every OOCQC Plus DMs quote (use sparingly)\n\n- \"**!keysmash**\" -> sends a keysmash\n\n- \"**!temp**\" -> convert temperatures\n\n- \"**!rps**\" -> play rock paper scissors\n\n- \"**!c3**\" -> talk directly to Colon3\n\n- \"**:3**\" -> :3\n\n";
         msg.channel.send(msgOutput);
         console.log(`\n${client.user.username} sent the help message`);
         return;
@@ -77,8 +77,25 @@ client.on("messageCreate", (msg) => {
             msg.channel.send(letters.keysmash());
             console.log(`\n${client.user.username} was called a good bot`);
             return;
+        } else if (msg.content.toLowerCase().includes("what", "pronouns")) {
+            msgOutput = "my pronouns are she/it :3";
+            msg.channel.send(msgOutput);
+            console.log(`\n${client.user.username} said her pronouns`);
+            return;
+        } else if (msg.content.toLowerCase().includes("is", "cute")) {
+            if (msg.content.toLowerCase().includes("amelia")) {
+                msgOutput = "of course she is :P\n\n(and just bc natalie programmed me to say this doesnt mean its not true)";
+                msg.channel.send(msgOutput);
+                console.log(`\n${client.user.username} agrees that amelia is cute`);
+                return;    
+            } else if (msg.content.toLowerCase().includes("natalie")) {
+                msgOutput = "NOPE";
+                msg.channel.send(msgOutput);
+                console.log(`\n${client.user.username} agrees that natalie is not cute`);
+                return;
+            }
         } else {
-            msgOutput = "u have to tell me something smh";
+            msgOutput = "heres everything u can say to me:\n\n- ask me what my pronouns are\n\n- call me a good bot :3\n\n- ask me if amelia is cute\n\n- ask me if natalie is cute";
             msg.channel.send(msgOutput);
             return;
         }
