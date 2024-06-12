@@ -82,20 +82,30 @@ client.on("messageCreate", (msg) => {
             msg.channel.send(msgOutput);
             console.log(`\n${client.user.username} said her pronouns`);
             return;
-        } else if (msg.content.toLowerCase().includes("is" && "cute")) {
+        } else if (cmdInput.includes("gock")) {
+            msgOutput = "please";
+            msg.channel.send(msgOutput);
+            console.log(`\n${client.user.username} craves gock`);
+            return;
+        } else if (msg.content.toLowerCase().includes("is", "cute", "gae")) {
             if (msg.content.toLowerCase().includes("amelia")) {
                 msgOutput = "of course she is :P\n\n(and just bc natalie programmed me to say this doesnt mean its not true)";
                 msg.channel.send(msgOutput);
                 console.log(`\n${client.user.username} agrees that amelia is cute`);
                 return;    
-            } else if (msg.content.toLowerCase().includes("natalie")) {
+            } else if (msg.content.toLowerCase().includes("natalie", "gae")) {
+                msgOutput = "yes, extremely\n\n(and just bc she programmed me to say this doesnt mean its not true)";
+                msg.channel.send(msgOutput);
+                console.log(`\n${client.user.username} agrees that amelia is cute`);
+                return;    
+            } else if (msg.content.toLowerCase().includes("natalie", "cute")) {
                 msgOutput = "NOPE\n\n(and just bc natalie programmed me to say this doesnt mean its not true)";
                 msg.channel.send(msgOutput);
                 console.log(`\n${client.user.username} agrees that natalie is not cute`);
                 return;
             }
         } else {
-            msgOutput = "heres everything u can say to me:\n\n- ask me what my pronouns are\n\n- call me a good bot :3\n\n- ask me if amelia is cute\n\n- ask me if natalie is cute";
+            msgOutput = "heres everything u can say to me:\n\n- ask me what my pronouns are\n\n- call me a good bot :3\n\n- ask me if amelia is cute/gae\n\n- ask me if natalie is cute/gae";
             msg.channel.send(msgOutput);
             return;
         }
