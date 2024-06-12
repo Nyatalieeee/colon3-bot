@@ -5,7 +5,7 @@ const letters = [ // 26 total
 
 function keysmash() {
     const letterArr = [];
-    for (i = 0; i < 13; i++) {
+    for (i = 0; i < 20; i++) {
         let letterNum = Math.floor(Math.random() * letters.length);
         letterArr.push(letters[letterNum]);
     }
