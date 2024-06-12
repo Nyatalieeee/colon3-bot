@@ -78,18 +78,18 @@ client.on("messageCreate", (msg) => {
             console.log(`\n${client.user.username} was called a good bot`);
             return;
         } else if (msg.content.toLowerCase().includes("what", "pronouns")) {
-            msgOutput = "my pronouns are she/it :3";
+            msgOutput = "my pronouns are it/she :3";
             msg.channel.send(msgOutput);
             console.log(`\n${client.user.username} said her pronouns`);
             return;
-        } else if (msg.content.toLowerCase().includes("is", "cute")) {
+        } else if (msg.content.toLowerCase().includes("is" && "cute")) {
             if (msg.content.toLowerCase().includes("amelia")) {
                 msgOutput = "of course she is :P\n\n(and just bc natalie programmed me to say this doesnt mean its not true)";
                 msg.channel.send(msgOutput);
                 console.log(`\n${client.user.username} agrees that amelia is cute`);
                 return;    
             } else if (msg.content.toLowerCase().includes("natalie")) {
-                msgOutput = "NOPE";
+                msgOutput = "NOPE\n\n(and just bc natalie programmed me to say this doesnt mean its not true)";
                 msg.channel.send(msgOutput);
                 console.log(`\n${client.user.username} agrees that natalie is not cute`);
                 return;
