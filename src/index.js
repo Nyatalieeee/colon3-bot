@@ -118,7 +118,7 @@ client.on("messageCreate", (msg) => {
             console.log(`${client.user.username} converted ${cmdInput.replace("f", "")}f to ${cTemp}c`);
             return;
         } else if (cmdInput.toLowerCase().includes("c")) {
-            let fTemp = Math.floor((cmdInput.replace("c", "") * 1.8) + 32);
+            let fTemp = Math.floor(((cmdInput.replace("c", "") * 1.8) + 32) * 10) / 10;
             msgOutput = `${cmdInput.replace("c", "")}c is ${fTemp}f`;
             msg.channel.send(msgOutput);
             console.log(`${client.user.username} converted ${cmdInput.replace("c", "")}c to ${fTemp}f`);
