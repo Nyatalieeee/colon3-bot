@@ -139,40 +139,21 @@ client.on("messageCreate", (msg) => {
         if (cmdInput === rock || cmdInput === paper || cmdInput === scissors) {
             let rpsNum = Math.floor(Math.random() * rps.length);
             msgOutput = rps[rpsNum];
-
             // checks if input is same as bot output
             if (msgOutput === cmdInput) {
                 msg.channel.send(`${msgOutput}\n\nit's a tie!`);
                 console.log(`\n${client.user.username} said ${rps[rpsNum]}`);
                 return;
             } else {
-                // win (paper covers rock)
-                if (msgOutput === rock && cmdInput === paper) {
+                if ((msgOutput === rock && cmdInput === paper)
+                || (msgOutput === paper && cmdInput === scissors)
+                || (msgOutput === scissors && cmdInput === rock)) {
                     msg.channel.send(`${msgOutput}\n\nyou win :)`);
                     console.log(`\n${client.user.username} said ${rps[rpsNum]}`);
                     return;
-                // win (scissors cut paper)
-                } else if (msgOutput === paper && cmdInput === scissors) {
-                    msg.channel.send(`${msgOutput}\n\nyou win :)`);
-                    console.log(`\n${client.user.username} said ${rps[rpsNum]}`);
-                    return;
-                // win (rock breaks scissors)
-                } else if (msgOutput === scissors && cmdInput === rock) {
-                    msg.channel.send(`${msgOutput}\n\nyou win :)`);
-                    console.log(`\n${client.user.username} said ${rps[rpsNum]}`);
-                    return;
-                // lose (paper covers rock)
-                } else if (msgOutput === paper && cmdInput === rock) {
-                    msg.channel.send(`${msgOutput}\n\nyou lose :(`);
-                    console.log(`\n${client.user.username} said ${rps[rpsNum]}`);
-                    return;
-                // lose (scissors cut paper)
-                } else if (msgOutput === scissors && cmdInput === paper) {
-                    msg.channel.send(`${msgOutput}\n\nyou lose :(`);
-                    console.log(`\n${client.user.username} said ${rps[rpsNum]}`);
-                    return;
-                // lose (rock breaks scissors)
-                } else if (msgOutput === rock && cmdInput === scissors) {
+                } else if ((msgOutput === paper && cmdInput === rock)
+                || (msgOutput === scissors && cmdInput === paper)
+                || (msgOutput === rock && cmdInput === scissors)) {
                     msg.channel.send(`${msgOutput}\n\nyou lose :(`);
                     console.log(`\n${client.user.username} said ${rps[rpsNum]}`);
                     return;
