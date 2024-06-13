@@ -102,21 +102,28 @@ client.on("messageCreate", (msg) => {
             msg.channel.send(msgOutput);
             console.log(`\n${client.user.username} craves gock`);
             return;
-        } else if (msg.content.toLowerCase().includes("is", "cute", "gae")) {
+        } else if (msg.content.toLowerCase().includes("cute")) {
             if (msg.content.toLowerCase().includes("amelia")) {
                 msgOutput = "of course she is :P\n\n(and just bc natalie programmed me to say this doesnt mean its not true)";
                 msg.channel.send(msgOutput);
                 console.log(`\n${client.user.username} agrees that amelia is cute`);
                 return;    
-            } else if (msg.content.toLowerCase().includes("natalie", "gae")) {
-                msgOutput = "yes, extremely\n\n(and just bc she programmed me to say this doesnt mean its not true)";
-                msg.channel.send(msgOutput);
-                console.log(`\n${client.user.username} agrees that amelia is cute`);
-                return;    
-            } else if (msg.content.toLowerCase().includes("natalie", "cute")) {
+            } else if (msg.content.toLowerCase().includes("natalie")) {
                 msgOutput = "NOPE\n\n(and just bc natalie programmed me to say this doesnt mean its not true)";
                 msg.channel.send(msgOutput);
                 console.log(`\n${client.user.username} agrees that natalie is not cute`);
+                return;
+            }
+        } else if (msg.content.toLowerCase().includes("gae")) {
+            if (msg.content.toLowerCase().includes("amelia")) {
+                msgOutput = "yes, extremely";
+                msg.channel.send(msgOutput);
+                console.log(`\n${client.user.username} says amelia is gae`);
+                return;
+            } else if (msg.content.toLowerCase().includes("natalie")) {
+                msgOutput = "very.";
+                msg.channel.send(msgOutput);
+                console.log(`\n${client.user.username} says that natalie is gae`);
                 return;
             }
         } else {
