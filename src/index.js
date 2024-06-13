@@ -30,7 +30,7 @@ client.on("messageCreate", (msg) => {
         return;
     }
     if (msg.content === "!help") {
-        msgOutput = "- \"**!help**\" -> shows the list of commands\n\n- \"**!ping**\" -> responds with \"pong!\"\n\n- \"**!foo**\" -> responds with \"bar\"\n\n- \"**!quote**\" -> sends a random OOCQC Plus DMs quote\n\n- \"**!allquotes**\" -> sends a list of every OOCQC Plus DMs quote (use sparingly)\n\n- \"**!keysmash**\" -> sends a keysmash\n\n- \"**!temp**\" -> convert temperatures\n\n- \"**!rps**\" -> play rock paper scissors\n\n- \"**!c3**\" -> talk directly to Colon3\n\n- \"**:3**\" -> :3\n\n";
+        msgOutput = "- \"**!help**\" -> shows the list of commands\n\n- \"**!ping**\" -> responds with \"pong!\"\n\n- \"**!foo**\" -> responds with \"bar\"\n\n- \"**!quote**\" -> sends a random OOCQC Plus DMs quote\n\n- \"**!allquotes**\" -> sends a list of every OOCQC Plus DMs quote (use sparingly)\n\n- \"**!roll**\" -> roll a 6 sided die\n\n- \"**!keysmash**\" -> sends a keysmash\n\n- \"**!temp**\" -> convert temperatures\n\n- \"**!rps**\" -> play rock paper scissors\n\n- \"**!c3**\" -> talk directly to Colon3\n\n- \"**:3**\" -> :3\n\n";
         msg.channel.send(msgOutput);
         console.log(`\n${client.user.username} sent the help message`);
         return;
@@ -65,6 +65,16 @@ client.on("messageCreate", (msg) => {
         msgOutput = ":3";
         msg.channel.send(msgOutput);
         console.log(`\n:3`);
+        return;
+    }
+    if (msg.content === "!roll") {
+        let rollNum = Math.floor(Math.random() * 6);
+        if (rollNum == 0) {
+            rollNum += Math.floor(Math.random() * 5);
+        }
+        msgOutput = rollNum;
+        msg.channel.send(`you rolled a ${rollNum}!`);
+        console.log(`User rolled a ${rollNum}`);
         return;
     }
     if (msg.content === "!keysmash") {
