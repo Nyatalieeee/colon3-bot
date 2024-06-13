@@ -67,6 +67,11 @@ client.on("messageCreate", (msg) => {
         console.log(`\n:3`);
         return;
     }
+    if (msg.content === "!jenn") { // yea idk
+        msgOutput = "hi (idk what this command should do)";
+        msg.channel.send(msgOutput);
+        return;
+    }
     if (msg.content === "!roll") {
         let rollNum = Math.floor(Math.random() * 6);
         if (rollNum == 0) {
@@ -144,7 +149,6 @@ client.on("messageCreate", (msg) => {
             return;
         }
     }
-    // blame amelia for this mess /lh
     if (cmd[0] === "!rps") {
         if (cmdInput === rock || cmdInput === paper || cmdInput === scissors) {
             let rpsNum = Math.floor(Math.random() * rps.length);
