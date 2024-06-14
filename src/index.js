@@ -64,9 +64,22 @@ client.on("messageCreate", (msg) => {
         let jennQuoteNum = Math.floor(Math.random() * 114) - 1;
         msgOutput = quotes.jennQuotes[jennQuoteNum];
         msg.channel.send(msgOutput);
-        quoteNum += 1;
-        console.log(`${client.user.username} said jenn quote #${jennQuoteNum}`)
+        jennQuoteNum += 1;
+        console.log(`${client.user.username} said jenn quote #${jennQuoteNum}`);
         return;
+    } else if (msg.content === "!amelia") {
+        let amyQuoteNum = Math.floor(Math.random() * 41) - 1;
+        msgOutput = quotes.ameliaQuotes[amyQuoteNum];
+        msg.channel.send(msgOutput);
+        amyQuoteNum += 1;
+        console.log(`${client.user.username} said amelia quote #${amyQuoteNum}`);
+        return;
+    } else if (msg.content === "!natalie") {
+        let natQuoteNum = Math.floor(Math.random() * 30) - 1;
+        msgOutput = quotes.natalieQuotes[natQuoteNum];
+        msg.channel.send(msgOutput);
+        natQuoteNum += 1;
+        console.log(`${client.user.username} said natalie quote #${natQuoteNum}`);
     }
     if (msg.content === ":3") {
         msgOutput = ":3";
