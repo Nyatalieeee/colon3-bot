@@ -55,7 +55,82 @@ const jennQuotes = [
     "I have a thing for British twinks..... and Alastair", "im drinking what ur blasting", "NO I CIRCUMSIZED MY LAVALAMP", "cum cum cum cum cum. CUM NOW", "ill moan even louder then"
 ];
 
+const natalieQuotes = [
+    "'dont eat poopoo' literally 1984",
+    "the hole",
+    "hes bouncin off my booty cheeks i love the way he rides",
+    "i should not be trusted with pumpkins",
+    "idk how to get into your hole",
+    "the potatoes are made from human flesh dw",
+    "im gonna eat the flex tape",
+    "meow",
+    "cock if it was good",
+    "i am now inside lenin",
+    "lenin just gave birth to me",
+    "welcome to lenin's ass",
+    "welcome back whore",
+    "do not fuck the numbers",
+    "got negative ass, shits concave",
+    "is this vulva city-themed",
+    "i lost my rod again",
+    "'onceler sexy hot onceler booty gif'",
+    "do the cat >:)",
+    "can the placing of the boobs wait a little bit",
+    `"maybe if i twist hard enough itll come off" *leaves*`,
+    "u wouldnt dare give the town top surgery",
+    "im not sure what u expect me to do with all this cake",
+    "and i literally invented planet vore",
+    "u already paid me for the feet",
+    "honestly id feel naked without my cat ears",
+    "im not cis im normal",
+
+    "i did NOT expect to be talking abt blending stolen fetuses today",
+    "wait wtf why are there like holes",
+    "129 insertions(+) :weary:",
+    "i mean he had a fkn glass jar pop inside his ass and he didnt even SAY anything",
+];
+
+const ameliaQuotes = [
+    "we will unenglishify her",
+    "DO NOT HAVE SEX WITH YOUR BLAHAJ",
+    "how does it feel to be inside a sniffer",
+    "the full thing is out now",
+    "this thing is so big",
+    "my boobs just jumped out of my torso",
+    "replace the us gov w boobs",
+    "summer is fucking",
+    "i cant believe we're inside a sniffer",
+    "actually which ones bigger",
+    "ok i have now shit myself",
+    "we are *not* going to keep boners in sas",
+    "stasen is weird tho",
+    "meow",
+    "as soon as i get my pc built i will literally download BG3 and shart",
+    "new rule you cant use screenshots in the oocqc thread because they take too much time",
+    "please kindly head on over to the nearest public park and then explode",
+    "context would be *highly* appreciated",
+    "no cassi im autistic",
+    "semi-automatic penis",
+    "either way its too long",
+    "gonna shit myself rn dish",
+
+    "NATALIE do not eat dilators",
+    "the tattoo could just end up being up ur pussy",
+    "like just a pile of boobs",
+    "(it just releases gocks everywhere)",
+    "thats bc you'd be using this only inside nattie",
+    "just dont put it in",
+    "bro just invented edible cock",
+    "im going to shit myself",
+    "ok i busted out the foot",
+    "MAYBE this head isnt good",
+    "and pussy hair. cant forget pussy hair.",
+    "pussy time :3c",
+];
+
 module.exports =  {
     quotes,
-    jennQuotes
+    jennQuotes,
+    natalieQuotes,
+    ameliaQuotes
 };
