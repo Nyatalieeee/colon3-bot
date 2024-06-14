@@ -24,7 +24,6 @@ client.on("messageCreate", (msg) => {
     const rock = rps[0];
     const paper = rps[1];
     const scissors = rps[2];
-    // probably move the rps shit to another module tbh
 
     if (msg.author.bot) {
         return;
@@ -61,15 +60,18 @@ client.on("messageCreate", (msg) => {
         console.log(`\n${client.user.username} said every quote`);
         return;
     }
+    if (msg.content === "!jenn") {
+        let jennQuoteNum = Math.floor(Math.random() * 114) - 1;
+        msgOutput = quotes.jennQuotes[jennQuoteNum];
+        msg.channel.send(msgOutput);
+        quoteNum += 1;
+        console.log(`${client.user.username} said jenn quote #${jennQuoteNum}`)
+        return;
+    }
     if (msg.content === ":3") {
         msgOutput = ":3";
         msg.channel.send(msgOutput);
         console.log(`\n:3`);
-        return;
-    }
-    if (msg.content === "!jenn") { // yea idk
-        msgOutput = "hi (idk what this command should do)";
-        msg.channel.send(msgOutput);
         return;
     }
     if (msg.content === "!roll") {
