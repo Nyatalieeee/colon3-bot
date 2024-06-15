@@ -21,6 +21,7 @@ const quotes = [
     "ig theyd have their dreams of genocide \"ruined\" by sex \n\n--amelia\n",
     "how would have they uh \n\n> gotten inside \n\n--amelia\n",
     "pussy time :3c \n\n--amelia\n",
+    "brb gonna shit myself /hj \n\n--amelia\n",
 
     // natalie quotes (4)
     "i did NOT expect to be talking abt blending stolen fetuses today \n\n--natalie\n",
