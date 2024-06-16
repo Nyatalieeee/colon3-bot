@@ -1,5 +1,5 @@
 const quotes = [
-    // amelia quotes (21)
+    // amelia quotes (22)
     "everything that is ballshaped will be consumed \n\n--amelia\n",
     "NATALIE do not eat dilators\n\n--amelia\n",
     "the tattoo could just end up being up ur pussy \n\n--amelia\n",
@@ -115,15 +115,9 @@ const ameliaQuotes = [
     "either way its too long",
     "gonna shit myself rn dish",
 
-    "NATALIE do not eat dilators",
-    "the tattoo could just end up being up ur pussy",
-    "like just a pile of boobs",
     "(it just releases gocks everywhere)",
     "thats bc you'd be using this only inside nattie",
-    "just dont put it in",
     "bro just invented edible cock",
-    "im going to shit myself",
-    "ok i busted out the foot",
     "MAYBE this head isnt good",
     "and pussy hair. cant forget pussy hair.",
     "pussy time :3c",
