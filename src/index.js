@@ -47,39 +47,39 @@ client.on("messageCreate", (msg) => {
         return;
     }
     if (msg.content === "!quote") {
-        let quoteNum = Math.floor(Math.random() * 25);
-        msgOutput = quotes[quoteNum];
+        let quoteNum = Math.floor(Math.random() * quotes.quotes.length);
+        msgOutput = quotes.quotes[quoteNum];
         msg.channel.send(`> ${msgOutput}`);
         quoteNum += 1;
         console.log(`\n${client.user.username} said quote #${quoteNum}`);
         return;
     }
     if (msg.content === "!allquotes") {
-        msgOutput = quotes.join('\n');
+        msgOutput = quotes.quotes.join('\n');
         msg.channel.send(`\`\`\`${msgOutput}\`\`\``);
         console.log(`\n${client.user.username} said every quote`);
         return;
     }
     if (msg.content === "!jenn") {
-        let jennQuoteNum = Math.floor(Math.random() * 114) - 1;
+        let jennQuoteNum = Math.floor(Math.random() * quotes.jennQuotes.length);
         msgOutput = quotes.jennQuotes[jennQuoteNum];
         msg.channel.send(msgOutput);
         jennQuoteNum += 1;
-        console.log(`${client.user.username} said jenn quote #${jennQuoteNum}`);
+        console.log(`\n${client.user.username} said jenn quote #${jennQuoteNum}`);
         return;
     } else if (msg.content === "!amelia") {
-        let amyQuoteNum = Math.floor(Math.random() * 41) - 1;
+        let amyQuoteNum = Math.floor(Math.random() * quotes.ameliaQuotes.length);
         msgOutput = quotes.ameliaQuotes[amyQuoteNum];
         msg.channel.send(msgOutput);
         amyQuoteNum += 1;
-        console.log(`${client.user.username} said amelia quote #${amyQuoteNum}`);
+        console.log(`\n${client.user.username} said amelia quote #${amyQuoteNum}`);
         return;
     } else if (msg.content === "!natalie") {
-        let natQuoteNum = Math.floor(Math.random() * 30) - 1;
+        let natQuoteNum = Math.floor(Math.random() * quotes.natalieQuotes.length);
         msgOutput = quotes.natalieQuotes[natQuoteNum];
         msg.channel.send(msgOutput);
         natQuoteNum += 1;
-        console.log(`${client.user.username} said natalie quote #${natQuoteNum}`);
+        console.log(`\n${client.user.username} said natalie quote #${natQuoteNum}`);
     }
     if (msg.content === ":3") {
         msgOutput = ":3";
@@ -90,11 +90,11 @@ client.on("messageCreate", (msg) => {
     if (msg.content === "!roll") {
         let rollNum = Math.floor(Math.random() * 6);
         if (rollNum == 0) {
-            rollNum += Math.floor(Math.random() * 5);
+            rollNum += 6;
         }
         msgOutput = rollNum;
         msg.channel.send(`you rolled a ${rollNum}!`);
-        console.log(`User rolled a ${rollNum}`);
+        console.log(`\nUser rolled a ${rollNum}`);
         return;
     }
     if (msg.content === "!keysmash") {
