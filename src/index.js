@@ -65,7 +65,7 @@ client.on("messageCreate", (msg) => {
         let jennQuoteNum = Math.floor(Math.random() * quotes.jennQuotes.length);
         msgOutput = quotes.jennQuotes[jennQuoteNum];
         msg.channel.send(msgOutput);
-        jennQuoteNum += 1;
+        jennQuoteNum++;
         console.log(
             `\n${client.user.username} said jenn quote #${jennQuoteNum}`
         );
@@ -76,7 +76,7 @@ client.on("messageCreate", (msg) => {
         );
         msgOutput = quotes.ameliaQuotes[amyQuoteNum];
         msg.channel.send(msgOutput);
-        amyQuoteNum += 1;
+        amyQuoteNum++;
         console.log(
             `\n${client.user.username} said amelia quote #${amyQuoteNum}`
         );
@@ -87,7 +87,7 @@ client.on("messageCreate", (msg) => {
         );
         msgOutput = quotes.natalieQuotes[natQuoteNum];
         msg.channel.send(msgOutput);
-        natQuoteNum += 1;
+        natQuoteNum++;
         console.log(
             `\n${client.user.username} said natalie quote #${natQuoteNum}`
         );
